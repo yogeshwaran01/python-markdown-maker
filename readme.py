@@ -144,11 +144,11 @@ with open('code.md', 'w') as file:
 readme.write(
     [head_1, quotes, explantion, t.render(), head_2, code_block(text_c, lang='python'), 
     head_4, code_block(text_e, lang='python'),
-    code_block(ou3, lang='python'),
+    code_block(ou3, lang='markdown'),
     head_5, code_block(text_f, lang='python'),
-    code_block(ou4, lang='python'),
-    head_6, code_block(text_g, lang='python'),code_block(ou1, lang='python'),
-    head_3, code_block(text_d, lang='python'),code_block(ou2, lang='python'),
+    code_block(ou4, lang='markdown'),
+    head_6, code_block(text_g, lang='python'),code_block(ou1, lang='markdown'),
+    head_3, code_block(text_d, lang='python'),code_block(ou2, lang='markdown'),
     headers("Rendering", level=3),
     code_block(fines, lang='python')],
 )

@@ -25,7 +25,7 @@ code_block("print('Hello World!')", lang='python')
 lists(['Python', 'Javascript', 'Go', 'PhP'])
 
 ```
-```python
+```markdown
     
 * Python
 * Javascript
@@ -39,7 +39,7 @@ lists(['Python', 'Javascript', 'Go', 'PhP'])
 lists(['order', 'Python', 'Javascript', 'Go', 'PhP'])
 
 ```
-```python
+```markdown
     
 1. Python
 2. Javascript
@@ -60,7 +60,7 @@ lists([
 ])
 
 ```
-```python
+```markdown
     
 * Frontend
         1. Html
@@ -79,7 +79,7 @@ t.add_item("Javascript", "Web Dev")
 table = t.render()
 
 ```
-```python
+```markdown
     Languages | Uses
 --------- | ----
 Python | ML/AI
