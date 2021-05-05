@@ -1,9 +1,17 @@
-import requests
-
+import urllib.request
+import urllib.parse
+import json
 
 def markdown_to_html(text: str) -> str:
     """ Function convert markdown to HTML """
-    return requests.post("https://api.github.com/markdown", json={"text": text}).text
+    data = json.dumps({"text": text})
+    data = data.encode()
+    headers = {"Accept": "application/vnd.github.v3+json"}
+    req = urllib.request.Request(url="https://api.github.com/markdown", data=data, headers=headers)
+    req.add_header('Content-Type', 'application/json')
+    with urllib.request.urlopen(req, data=data) as response:
+        text = response.read()
+    return text.decode()
 
 
 def headers(text: str, level: int) -> str:

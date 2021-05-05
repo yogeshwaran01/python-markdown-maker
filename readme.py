@@ -153,6 +153,7 @@ readme.write(
     code_block(fines, lang='python')],
 )
 
-a = open('README.md', 'w')
-print(readme.render.text)
-readme.render.save_as_md(a)
+a = open('code.html', 'w')
+# readme.render.save_as_md(a)
+readme.render.save_as_html(a)
+a.close()
