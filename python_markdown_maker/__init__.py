@@ -89,7 +89,7 @@ class Table:
             items.append(" | ".join(i))
         self.strcture = code + line + "\n".join(items)
 
-        return self.strcture
+        return self.strcture + "\n"
 
 
 def collapsible(text: str, summary: str):
@@ -141,5 +141,5 @@ class Document:
         render_obj = _render(self.document)
         return render_obj
 
-    def build(self, elements: list):
+    def write(self, elements: list):
         self.document = "".join(elements)
