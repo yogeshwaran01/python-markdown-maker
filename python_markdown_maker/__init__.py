@@ -2,13 +2,16 @@ import urllib.request
 import urllib.parse
 import json
 
+
 def markdown_to_html(text: str) -> str:
     """ Function convert markdown to HTML """
     data = json.dumps({"text": text})
     data = data.encode()
     headers = {"Accept": "application/vnd.github.v3+json"}
-    req = urllib.request.Request(url="https://api.github.com/markdown", data=data, headers=headers)
-    req.add_header('Content-Type', 'application/json')
+    req = urllib.request.Request(
+        url="https://api.github.com/markdown", data=data, headers=headers
+    )
+    req.add_header("Content-Type", "application/json")
     with urllib.request.urlopen(req, data=data) as response:
         text = response.read()
     return text.decode()
@@ -91,7 +94,9 @@ class Table:
 
     def render(self):
         code = " | ".join(self.filednames) + "\n"
-        line = " | ".join([j * "-" for j in [len(i) for i in self.filednames]]) + "\n"
+        line = " | ".join(
+            [j * "-" for j in [len(i) for i in self.filednames]]
+        ) + "\n"
         items = []
         for i in self.all_items:
             items.append(" | ".join(i))
@@ -105,7 +110,7 @@ def collapsible(text: str, summary: str):
         f"""
 <details>
   <summary>{summary}</summary>
-  
+
 {text}
 
 </details>
